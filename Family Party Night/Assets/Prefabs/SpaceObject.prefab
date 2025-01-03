@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2719148699980177296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956900090897974386}
+  - component: {fileID: 9063176026170321572}
+  m_Layer: 0
+  m_Name: SpaceObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956900090897974386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719148699980177296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
+  m_LocalPosition: {x: 0, y: 0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
+--- !u!114 &9063176026170321572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719148699980177296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abaa83a1827843fca9c376dffb70a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceInfo: {fileID: 0}
+  spaceModel: {fileID: 919132149155446097, guid: 840fc78e5cec947099760504f3d10af6, type: 3}
+  spaceObject: {fileID: 0}
+  arrowObjects: []
+  arrowModel: {fileID: 3065128202103728355, guid: fe36fdb76837f4a86aeb78df4d0aafc4, type: 3}
+  enableEditorDraw: 0
+  blueMaterial: {fileID: 2100000, guid: 64b5960462d6446838ec1abbe414a2ea, type: 2}
+  eventMaterial: {fileID: 2100000, guid: 2ded19689fcfb4cc6a45700a7eaa8d0a, type: 2}
+  redMaterial: {fileID: 2100000, guid: f8f99ece7faa7443e81e409d88010cac, type: 2}
+  luckyMaterial: {fileID: 2100000, guid: 0e54203c3fe1c48e6b3acb572ac12f30, type: 2}
+  DKBowserMaterial: {fileID: 2100000, guid: ef5b39c3cdfcd4a7c97c5a2a1bbe18a7, type: 2}
+  passableMaterial: {fileID: 2100000, guid: c5875df9df3674b7d852fed2f6cb6f00, type: 2}
