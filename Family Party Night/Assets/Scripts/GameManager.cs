@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour {
             playerUIReferences[i].playerCharacterImageObject = characterImage;
 
             GameObject placeImage = Instantiate(placeImageObject, playerUIEmpties[i].gameObject.transform);
-            placeImage.GetComponent<Image>().sprite = placeSprites[playerInfo[i].getPlace()];
+            // placeImage.GetComponent<Image>().sprite = placeSprites[playerInfo[i].getPlace()];
             playerUIReferences[i].playerPlaceObject = placeImage;
 
             GameObject stars = Instantiate(starsImageObject, playerUIEmpties[i].gameObject.transform);
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour {
     
         for(int i = 0; i < playerInfo.Count; i++){
             if(i == 0){
-                playerInfo[i].setStars(0); playerInfo[i].setCoins(23);
+                playerInfo[i].setStars(1); playerInfo[i].setCoins(10);
             }else if(i == 1){
                 playerInfo[i].setStars(1); playerInfo[i].setCoins(10);
             }
@@ -190,12 +190,18 @@ public class GameManager : MonoBehaviour {
     }
 
     public void checkAndUpdatePlayerUI(){
+        bool updateUI = false;
         for(int i = 0; i < playerInfo.Count; i++){
             if(playerInfo[i].updateUI){
+                updateUI = true;
+            }
+        } 
+        if(updateUI){
+            for(int i = 0; i < playerInfo.Count; i++){
                 updatePlayerUI(i);
                 playerInfo[i].updateUI = false;
             }
-        } 
+        }
     }
 
     public void updatePlayerUI(int playerIndex){
