@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour{
 
     public GameObject myCamera;
 
+    public PlayerStruct myPlayerInfo;
+
     //Run before Start
     void Awake(){
         myTurn = false;
@@ -136,12 +138,22 @@ public class PlayerController : MonoBehaviour{
                 }
 
                 if(diceNumber <= 0 && timeBeforeMove < 0){
+                    EvaluateLandedSpace();
+
                     EndTurn();
                 }
                 timeBeforeMove -= Time.deltaTime;
             }
         }
 
+    }
+
+    public void EvaluateLandedSpace(){
+        if(currentSpace.spotType == SpotType.Blue){
+            myPlayerInfo.setCoins(myPlayerInfo.getCoins() + 3);
+        }else if(currentSpace.spotType == SpotType.Red){
+            myPlayerInfo.setCoins(myPlayerInfo.getCoins() - 3);
+        }
     }
 
     public void SetCameraActive(bool isActive){
