@@ -1,13 +1,13 @@
 using UnityEditor;
 using UnityEngine;
 
-// [CustomEditor(typeof(BoardObject))]
+// [CustomEditor(typeof(Boardmanager))]
 public class MyBoardObjectEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         // Get the target MonoBehaviour object
-        BoardObject myBoardObject = (BoardObject)target;
+        BoardManager myBoardObject = (BoardManager)target;
 
         // Display the base class inspector
         DrawDefaultInspector();

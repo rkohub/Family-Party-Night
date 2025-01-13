@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour{
     public float timeBeforeMove;
     public float timeToMove;
 
+    public float slowTimeToMove;
+    public float fastTimeToMove;
+
     public bool myTurn;
 
     public GameManager gm;
@@ -47,7 +50,9 @@ public class PlayerController : MonoBehaviour{
             Debug.LogWarning("GameManager not found!");
         }
 
-        timeToMove = 0.4f;
+        slowTimeToMove = 0.4f;
+        fastTimeToMove = 0.1f;
+        timeToMove = slowTimeToMove; 
         timeBeforeMove = timeToMove; 
 
         if (CanvasManager.Instance != null){
@@ -135,6 +140,8 @@ public class PlayerController : MonoBehaviour{
                         updateDiceTextNumber(diceNumber - 1);
                         timeBeforeMove = timeToMove;
                     }
+
+                    currentSpace.OnSpotEnter();
                 }
 
                 if(diceNumber <= 0 && timeBeforeMove < 0){
@@ -146,15 +153,28 @@ public class PlayerController : MonoBehaviour{
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.F)){
+            if(timeToMove == slowTimeToMove){
+                timeToMove = fastTimeToMove;
+            }else{
+                timeToMove = slowTimeToMove;
+            }
+        }
+
     }
 
     public void EvaluateLandedSpace(){
         if(currentSpace.spotType == SpotType.Blue){
-            myPlayerInfo.setCoins(myPlayerInfo.getCoins() + 3);
+            // myPlayerInfo.setCoins(myPlayerInfo.getCoins() + 3);
+            
         }else if(currentSpace.spotType == SpotType.Red){
             myPlayerInfo.setCoins(myPlayerInfo.getCoins() - 3);
         }
+
+        currentSpace.OnSpotLand();
     }
+
+
 
     public void SetCameraActive(bool isActive){
         if (myCamera != null){

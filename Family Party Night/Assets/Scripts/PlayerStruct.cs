@@ -19,6 +19,17 @@ public class PlayerStruct {
 
     public bool updateUI;
 
+    public PlayerController playerController;
+    private static List<PlayerStruct> allPlayers = new List<PlayerStruct>();
+
+    public PlayerStruct(){
+        allPlayers.Add(this);
+    }
+
+    public void loadPlayerController(){
+        this.playerController = playerGameObject.GetComponent<PlayerController>();
+    }
+
     public float getStars(){
         return stars;
     }
@@ -37,6 +48,24 @@ public class PlayerStruct {
         updateUI = true;// updateMyDisplay();
     }
 
+    public void addCoins(float coins){
+        this.setCoins(this.getCoins() + coins);
+    }
+
+    public void addStars(float stars){
+        this.setStars(this.getStars() + stars);
+    }
+
+    public void subtractCoins(float coins){
+        this.setCoins(this.getCoins() - coins);
+    }
+
+    public void subtractStars(float stars){
+        this.setStars(this.getStars() - stars);
+    }
+
+
+
     public int getPlace(){
         return place;
     }
@@ -44,12 +73,6 @@ public class PlayerStruct {
     // public void setPlace(int value){
     //     place = Mathf.Max(1, value);  // Ensures place is at least 1
     // }
-
-    private static List<PlayerStruct> allPlayers = new List<PlayerStruct>();
-
-    public PlayerStruct(){
-        allPlayers.Add(this);
-    }
 
     public int CompareTo(PlayerStruct b){
         //Sort Based on what Comparision between a and B.

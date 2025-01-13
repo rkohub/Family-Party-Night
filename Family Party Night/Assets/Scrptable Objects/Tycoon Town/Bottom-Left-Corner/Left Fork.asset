@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   position: {x: -3.5, y: 0.5, z: 23}
-  spotType: 5
+  spotType: 6
   outConnections:
   - {fileID: 11400000, guid: d525157feb81e441ebebacffbd460857, type: 2}
   - {fileID: 11400000, guid: aa9677f9d068a4a3e9af53b9a191a417, type: 2}

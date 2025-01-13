@@ -6,5 +6,6 @@ public enum SpotType{
     Red,
     Lucky,
     DKBowser,
-    Passable
+    Passable,
+    Fork,
 }

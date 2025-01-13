@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour {
             GameObject playerObject = Instantiate(allCharacters[playerInfo[i].characterID].playerModel, this.gameObject.transform);
             playerObject.GetComponent<PlayerController>().myPlayerInfo = playerInfo[i];
             playerInfo[i].playerGameObject = playerObject;
-
+            playerInfo[i].loadPlayerController();
             
             playerInfo[i].playerUI = playerUIReferences[i];
         }

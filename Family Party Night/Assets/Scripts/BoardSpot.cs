@@ -9,6 +9,9 @@ public class BoardSpot : ScriptableObject {
     public List<BoardSpot> outConnections;
     public bool updateVisual;
 
+    public System.Action OnSpotLand;
+    public System.Action OnSpotEnter;
+
     public void OnValidate(){
         // Debug.Log("ScriptableObject data updated!");
         
@@ -27,6 +30,22 @@ public class BoardSpot : ScriptableObject {
             }
         }
     }
+
+    //On Spot Enter
+        //Prompt Buy Star
+        //Prompt Which Way to go. 
+    //On Spot Leave
+    //On Spot land
+        //Increase Coins
+        //Trigger Events
+
+    //Can Change from Passable to not
+    //Tree of possible SpotTypes?
+    //Star Can Move, Blue Space when not Star
+
+    //Spot Type, StarSponSpot, StarLocation
+
+    //Extendable Board Manager Class?
 }
 
 

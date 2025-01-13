@@ -111,8 +111,11 @@ public class SpaceObject : MonoBehaviour{
             case SpotType.Passable:
                 rend.material = passableMaterial;
                 break;
+            case SpotType.Fork:
+                rend.material = passableMaterial;
+                break;
             default:
-                Debug.LogWarning("Material not assigned");
+                Debug.LogWarning("My Warning, Material not assigned. Probably Because of New Spot Type. Change in SpaceObject.cs");
                 break;
         }
     }

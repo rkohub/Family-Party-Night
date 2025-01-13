@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a941fa4f404804003b5944b386371233, type: 3}
-  m_Name: Right-Split
+  m_Name: Right-Fork
   m_EditorClassIdentifier: 
   id: 1
   position: {x: 50.5, y: 0.5, z: 20}
-  spotType: 5
+  spotType: 6
   outConnections:
   - {fileID: 11400000, guid: 0bf6cac5802bf42d5a2b2b4fdb19e6ae, type: 2}
   updateVisual: 1
