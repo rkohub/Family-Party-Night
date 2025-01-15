@@ -47,9 +47,8 @@ public class BoardManager : MonoBehaviour{
                 Destroy(oldStar);
             }
 
-            AssignSpotActions(oldStarIndex, null, null);
+            AssignSpotActions(oldStarIndex, null, pass);
         }
-       
 
 
         //Index Checking
@@ -163,7 +162,7 @@ public class BoardManager : MonoBehaviour{
         currentStarSpotIndex = -1;
         chooseNewStarSpot();
 
-
+        starCost = 10;
     }
 
     // Update is called once per frame
@@ -201,12 +200,17 @@ public class BoardManager : MonoBehaviour{
     }
 
     public void onPassStar(){
+        Debug.Log("Pass Star"); 
         PlayerStruct currentPlayer = gm.playerInfo[gm.playerTurn];
         if(currentPlayer.getCoins() >= starCost){
             currentPlayer.subtractCoins(starCost);//Not Working.
             currentPlayer.addStars(1);
             chooseNewStarSpot();
         }
+    }
+
+    public void pass(){
+        return;
     }
 
 }

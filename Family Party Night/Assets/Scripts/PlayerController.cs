@@ -67,11 +67,23 @@ public class PlayerController : MonoBehaviour{
         Transform target = globalCanvas.transform.Find("TurnsUI/Rolled_Number");
         if (target != null){
             //Safe to Search for object in start beacuse it isnt generated
-            diceTextObject = target.GetComponent<TMP_Text>();
+            diceTextObject = target.gameObject.GetComponent<TMP_Text>();
             if (diceTextObject == null){
                 Debug.LogWarning("Dice Text not found!");
             }
         }
+
+        //Set in Editor Prefab 
+        // target = this.gameObject.transform.Find("NewRollingDice");
+        // if (target != null){
+        //     //Safe to Search for object in start beacuse it isnt generated
+        //     dr = target.gameObject.GetComponent<DiceRoller>();
+        //     if (dr == null){
+        //         Debug.LogWarning("Dice Roller not found!");
+        //     }
+        // }
+
+
 
         currentSpace = startSpace;
         moveAboveSpace();
@@ -91,6 +103,8 @@ public class PlayerController : MonoBehaviour{
 
         spinning = true;
         myTurn = true;
+
+        dr.StartRolling(); 
     }
 
     public void EndTurn() {
@@ -117,10 +131,13 @@ public class PlayerController : MonoBehaviour{
                 if(spinning){
                     spinning = false;
                     dr.StopRolling();
-                }else{
-                    spinning = true;
-                    dr.StartRolling();
                 }
+                //Never Reached
+                // else{
+                //     spinning = true;
+                //     Debug.Log("J Start");
+                //     dr.StartRolling();
+                // }
             }
 
             if(spinning){
